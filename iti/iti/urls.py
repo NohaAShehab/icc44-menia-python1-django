@@ -26,7 +26,8 @@ urlpatterns = [
     # path('students/profile/<int:id>',students_profile, name='student.profile' ),
 
     # include urls files located students application ?
-    path('students/', include('students.urls'))
+    path('students/', include('students.urls')),
+    path('tracks/', include('tracks.urls')),
 
 
 ]
