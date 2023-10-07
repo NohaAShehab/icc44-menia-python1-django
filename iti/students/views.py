@@ -20,9 +20,9 @@ def sayHifriend(request, friendname):
 
 
 students = [
-    {"name": "John", "age": 25, "track": 'python', "id": 1},
-    {"name": "ahmed", "age": 25, "track": 'ai', "id": 2},
-    {"name": "ali", "age": 25, "track": 'php', "id": 3}
+    {"name": "John", "age": 25, "track": 'python', "id": 1, "image":"pic1.png"},
+    {"name": "ahmed", "age": 25, "track": 'ai', "id": 2, "image":"pic2.png"},
+    {"name": "ali", "age": 25, "track": 'php', "id": 3, "image":"pic3.png"}
 ]
 
 
@@ -44,4 +44,7 @@ def students_profile(request, id):
 
 
 def students_list(request):
-    return render(request, 'students/index.html')
+    # send data to the template
+    return render(request, 'students/index.html', context={"students":students})
+
+
