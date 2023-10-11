@@ -1,19 +1,8 @@
+{% extends 'layouts/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Students Home page</title>
-    <link rel="stylesheet" href="{% static 'students/css/style.css' %}">
-       <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css'%}">
-</head>
-<body>
-    <h1 style="color: red;"> Welcome to Students Home page </h1>
-    <div class="container">
-    <h2> Students List</h2>
-        {{students}}
-
-    <h3> Display data in a table </h3>
+{% block title %}Students Index{% endblock %}
+{% block content %}
+ <h3> Display data in a table </h3>
     <table class="table">
         <thead>
             <tr>
@@ -26,13 +15,8 @@
                 <td>{{std.name}}</td>  <td>{{std.age}}</td>
                  <td>{{std.track}}</td>  <td>{{std.id}}</td>
                     <td> <img src="{% static 'students/images/'|add:std.image %}" width="200" height="200"> </td>
-                    <td> <a class="btn btn-info" href="/students/profile/{{std.id}}">  Show </a></td>
-                    <td> <a class="btn btn-primary" href="{% url 'student.profile' std.id %}" > Show using url</a></td>
+                    <td> <a class="btn btn-primary" href="{% url 'student.profile' std.id %}" > Show</a></td>
             </tr>
         {% endfor %}
     </table>
-</div>
-<!--    <script src="{% static 'students/js/script.js' %}"></script>-->
-<script src="{% static 'bootstrap/js/bootstrap.js'%}"> </script>
-</body>
-</html>
+{% endblock%}
