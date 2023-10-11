@@ -1,0 +1,27 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %}Students Index{% endblock %}
+{% block content %}
+ <h3> Display data from database </h3>
+    <table class="table">
+        <thead>
+            <tr>
+               <td> Id</td> <td>Name</td> <td>Gender </td>
+                <td> Image </td> <td> Show</td>
+            </tr>
+        </thead>
+        {% for student in students %}
+            <tr>
+                <td>{{student.id}}</td>
+                <td>{{student.name}}</td>
+                {% if student.gender == 'm'%}
+                <td> Male</td>
+                {% else %}
+                <td> Female </td>
+                {% endif %}
+                    <td> <img src="{% static 'students/images/'|add:student.image %}" width="200" height="200"> </td>
+                    <td> <a class="btn btn-primary" href="{% url 'students.show' student.id %}" > Show</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock%}

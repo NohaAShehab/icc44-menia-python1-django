@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from students.models import Student
 
 
 # Create your views here.
@@ -61,3 +62,16 @@ def students_profile(request, id):
         return  render(request, 'students/profile.html', context={"student":filtered_student[0]})
 
     return HttpResponse("No such student Student ")
+
+
+
+
+def index(request):
+    students = Student.objects.all()
+    return  render(request, 'students/crud/index.html', context={"students":students})
+
+
+
+def show(request,id):
+    student =Student.objects.get(id=id)
+    return  render(request, 'students/crud/show.html', context={"student":student})

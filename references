@@ -7,3 +7,13 @@ https://docs.djangoproject.com/en/4.2/topics/templates/
 # images, css , js files  ---> static files
 
 After you add static folder to your application YOU MUST restart the server
+
+
+Models
+https://docs.djangoproject.com/en/4.2/topics/db/models/
+
+Making queries
+https://docs.djangoproject.com/en/4.2/topics/db/queries/
+
+
+https://docs.djangoproject.com/en/4.2/ref/models/querysets/
