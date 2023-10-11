@@ -19,8 +19,12 @@
                 {% else %}
                 <td> Female </td>
                 {% endif %}
-                    <td> <img src="{% static 'students/images/'|add:student.image %}" width="200" height="200"> </td>
-                    <td> <a class="btn btn-primary" href="{% url 'students.show' student.id %}" > Show</a></td>
+<!--                    <td> <img src="{% static 'students/images/'|add:student.image %}" width="200" height="200"> </td>-->
+                                    <td> <img src="{{student.get_image_url}}" width="200" height="200"> </td>
+
+<!--                <td> <a class="btn btn-primary" href="{% url 'students.show' student.id %}" > Show</a></td>-->
+                                <td> <a class="btn btn-primary" href="{{student.get_show_url}}" > Show</a></td>
+
             </tr>
         {% endfor %}
     </table>
