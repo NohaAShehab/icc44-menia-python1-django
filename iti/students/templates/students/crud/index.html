@@ -7,7 +7,7 @@
         <thead>
             <tr>
                <td> Id</td> <td>Name</td> <td>Gender </td>
-                <td> Image </td> <td> Show</td>
+                <td> Image </td> <td> Show</td>  <td> Delete </td>
             </tr>
         </thead>
         {% for student in students %}
@@ -24,7 +24,7 @@
 
 <!--                <td> <a class="btn btn-primary" href="{% url 'students.show' student.id %}" > Show</a></td>-->
                                 <td> <a class="btn btn-primary" href="{{student.get_show_url}}" > Show</a></td>
-
+<td> <a class="btn btn-danger" href="{{student.get_delete_url}}" > Delete</a></td>
             </tr>
         {% endfor %}
     </table>

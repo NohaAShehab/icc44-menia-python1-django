@@ -10,7 +10,7 @@
 {% block content %}
 <h1> Welcome to student profile from database </h1>
 <div class="card" style="width: 18rem;">
-  <img src="{% static 'students/images/'|add:student.image %}" class="card-img-top" alt="...">
+  <img src="{% static 'students/images/'|add:student.image %}" width="200" height="200" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Name: {{student.name}}</h5>
     <h5 class="card-title">Grade: {{student.grade}}</h5>

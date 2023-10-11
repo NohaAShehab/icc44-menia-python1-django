@@ -1,6 +1,6 @@
 from django.urls import path
 from students.views import (helloworld, sayHi, sayHifriend, students_index, students_profile,students_list,
-                            index, show)
+                            index, show, delete)
 urlpatterns = [
     path('hello', helloworld, name='helloworld'),
     path('hi', sayHi, name='hi'),
@@ -9,6 +9,7 @@ urlpatterns = [
     path('profile/<int:id>',students_profile, name='student.profile' ),
     path('list', students_list, name='students.list'),
     path('db', index, name='students.index' ),
-    path('db/<int:id>', show, name='students.show')
+    path('db/<int:id>', show, name='students.show'),
+    path('db/<int:id>/delete',delete, name='students.delete' )
 
 ]

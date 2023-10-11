@@ -25,3 +25,7 @@ class Student(models.Model):
     def get_show_url(self):
         url = reverse('students.show', args=[self.id])
         return url
+
+    def get_delete_url(self):
+        url = reverse('students.delete', args=[self.id])
+        return url

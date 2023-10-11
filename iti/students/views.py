@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from students.models import Student
 
@@ -75,3 +75,12 @@ def index(request):
 def show(request,id):
     student =Student.objects.get(id=id)
     return  render(request, 'students/crud/show.html', context={"student":student})
+
+
+
+def delete(request, id):
+    student = Student.objects.get(id=id)
+    student.delete()
+    url = reverse('students.index')
+    return  redirect(url)
+    # return HttpResponse("delete")
