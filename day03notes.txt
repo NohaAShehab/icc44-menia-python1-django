@@ -7,3 +7,15 @@ django forms ?
 
 
 1- create new file in your project forms.py
+create form structure
+and use it the views
+
+
+###########3
+file upload
+where can I upload the file ?
+files should be uploaded in media folder
+---> models
+
+--> forms ->>
+

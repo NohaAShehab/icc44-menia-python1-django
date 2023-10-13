@@ -108,7 +108,11 @@ def create(request):
 def createViaForm(request):
     form = StudentForm()
     if request.method == 'POST':
-        form = StudentForm(request.POST)
+        print('hiiiii')
+        print(request.POST)
+        print(request.FILES)
+        form = StudentForm(request.POST, request.FILES)
+
         if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']

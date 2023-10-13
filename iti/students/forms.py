@@ -8,7 +8,7 @@ class StudentForm(forms.Form):
     name = forms.CharField(required=True, label='Student Name')
     email = forms.EmailField()
     grade = forms.IntegerField(required=True)
-    image = forms.CharField()
+    image = forms.ImageField()
     gender = forms.ChoiceField(
         choices=[('m', 'Male'), ('f', 'Female')])
 

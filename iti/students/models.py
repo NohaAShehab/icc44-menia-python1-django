@@ -6,7 +6,8 @@ from django.shortcuts import  reverse
 class Student(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField(max_length=200,null=True, unique=True)
-    image = models.CharField(max_length=200, null=True)
+    image = models.ImageField(upload_to='students/images/', max_length=200, null=True)
+    # image save only the image
     grade=  models.IntegerField(default=100, null=True)
     gender = models.CharField(
         choices=[('m', 'Male'), ('f', 'Female')])
@@ -18,9 +19,11 @@ class Student(models.Model):
         return f"{self.name}"
 
 
-    def get_image_url(self):
-        return f'/static/students/images/{self.image}'
+    # def get_image_url(self):
+    #     return f'/static/students/images/{self.image}'
 
+    def get_image_url(self):
+        return f'/media/{self.image}'
 
     def get_show_url(self):
         url = reverse('students.show', args=[self.id])
