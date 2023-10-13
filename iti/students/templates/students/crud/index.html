@@ -3,6 +3,7 @@
 {% block title %}Students Index{% endblock %}
 {% block content %}
 <a href="{% url 'students.create'%}" class="btn btn-dark"> Add new Student </a>
+<a href="{% url 'students.forms.create'%}" class="btn btn-success"> Add Student via Form </a>
 <h3> Display data from database </h3>
 <table class="table">
     <thead>

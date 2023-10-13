@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from students.models import Student
-
+from students.forms import  StudentForm
 
 # Create your views here.
 
@@ -102,3 +102,28 @@ def create(request):
         # return  HttpResponse("data received")
     # return with form --> send data to server using it
     return render(request, 'students/crud/create.html')
+
+
+
+def createViaForm(request):
+    form = StudentForm()
+    if request.method == 'POST':
+        form = StudentForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            gender = form.cleaned_data['gender']
+            grade = form.cleaned_data['grade']
+            image = form.cleaned_data['image']
+            student = Student()
+            student.name = name
+            student.email = email
+            student.gender = gender
+            student.grade = grade
+            student.image = image
+            student.save()
+            return redirect(student.get_show_url())
+
+
+    return  render(request,'students/crud/form_create.html',
+                   context={"form":form})

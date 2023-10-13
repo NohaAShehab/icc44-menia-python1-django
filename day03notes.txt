@@ -1,0 +1,9 @@
+
+
+django forms ?
+
+--> ask django to create form ?
+    --> define validation rules in the form
+
+
+1- create new file in your project forms.py
