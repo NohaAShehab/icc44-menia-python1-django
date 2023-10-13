@@ -2,24 +2,24 @@
 {% load static %}
 
 {% block title %}
-  Student Profile
+Student Profile
 {% endblock%}
-
 
 
 {% block content %}
 <h1> Welcome to student profile from database </h1>
 <div class="card" style="width: 18rem;">
-  <img src="{% static 'students/images/'|add:student.image %}" width="200" height="200" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Name: {{student.name}}</h5>
-    <h5 class="card-title">Grade: {{student.grade}}</h5>
-    <h5 class="card-title">Email: {{student.email}}</h5>
-    <h5 class="card-title">Created At: {{student.created_at}}</h5>
-    <h5 class="card-title">Updated At: {{student.updated_at}}</h5>
-    <p class="card-text"></p>
-    <a href="{% url 'students.index' %}" class="btn btn-primary">Back to all students </a>
-  </div>
+    <img src="{% static 'students/images/'|add:student.image %}" width="200" height="200" class="card-img-top"
+         alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Name: {{student.name}}</h5>
+        <h5 class="card-title">Grade: {{student.grade}}</h5>
+        <h5 class="card-title">Email: {{student.email}}</h5>
+        <h5 class="card-title">Created At: {{student.created_at}}</h5>
+        <h5 class="card-title">Updated At: {{student.updated_at}}</h5>
+        <p class="card-text"></p>
+        <a href="{% url 'students.index' %}" class="btn btn-primary">Back to all students </a>
+    </div>
 </div>
 {% endblock %}
 
