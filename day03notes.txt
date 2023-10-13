@@ -19,3 +19,22 @@ files should be uploaded in media folder
 
 --> forms ->>
 
+
+########3 Relationship between models
+
+student study in track ?
+one student studies in only one track
+many students study in the same track
+
+one to many relationship fk?--> many side
+
+
+
+
+
+
+
+
+
+
+

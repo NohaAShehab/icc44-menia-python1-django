@@ -119,12 +119,18 @@ def createViaForm(request):
             gender = form.cleaned_data['gender']
             grade = form.cleaned_data['grade']
             image = form.cleaned_data['image']
+            # track= form.cleaned_data['track']
+            # track = request.POST['track'] # get track id ?
+            track = form.cleaned_data['track'] # extract track_id from request
+            # and gets the related track instance
+            print(track)
             student = Student()
             student.name = name
             student.email = email
             student.gender = gender
             student.grade = grade
             student.image = image
+            student.track = track
             student.save()
             return redirect(student.get_show_url())
 

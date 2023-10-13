@@ -1,6 +1,7 @@
 from django.db import models
 from django.shortcuts import  reverse
 
+from tracks.models import Track
 # Create your models here.
 
 class Student(models.Model):
@@ -11,6 +12,9 @@ class Student(models.Model):
     grade=  models.IntegerField(default=100, null=True)
     gender = models.CharField(
         choices=[('m', 'Male'), ('f', 'Female')])
+    track = models.ForeignKey(Track, on_delete=models.CASCADE, null=True, blank=True
+                              ,related_name='students')
+    # track ==> represent track object in db
     created_at= models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

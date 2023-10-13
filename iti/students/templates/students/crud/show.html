@@ -15,12 +15,20 @@ Student Profile
         <h5 class="card-title">Name: {{student.name}}</h5>
         <h5 class="card-title">Grade: {{student.grade}}</h5>
         <h5 class="card-title">Email: {{student.email}}</h5>
+        <h3 style="color:green" class="card-title"> Track object: {{student.track}}: {{student.track.created_at}}</h3>
         <h5 class="card-title">Created At: {{student.created_at}}</h5>
         <h5 class="card-title">Updated At: {{student.updated_at}}</h5>
         <p class="card-text"></p>
         <a href="{% url 'students.index' %}" class="btn btn-primary">Back to all students </a>
     </div>
 </div>
+<h1> See other students in this track </h1>
+{% for std in student.track.students.all %}
+{% if std.id != student.id %}
+<li> <a href="{{std.get_show_url}}">{{std}} </a></li>
+{% endif %}
+{% endfor %}
+{{student.track.students.all}}
 {% endblock %}
 
 <h1> Content will not be displayed </h1>
