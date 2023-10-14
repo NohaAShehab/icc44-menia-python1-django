@@ -14,9 +14,11 @@ inputs = document.querySelectorAll('input');
 for (var i = 0; i < inputs.length; i++) {
     inputs[i].classList.add('form-control');
 }
-select= document.querySelector('select')
-
-select.classList.add('form-control')
+selects= document.querySelectorAll('select');
+console.log(selects);
+for(var j=0; j< selects.length; j++) {
+    selects[j].classList.add('form-control');
+}
 
 divs = document.getElementsByClassName("form_element")
 for (var d =0; d < divs.length; d++){
@@ -35,5 +37,5 @@ for (var d =0; d < checkboxex.length; d++){
 
     errors = document.querySelectorAll('ul.errorlist')
 for (var m=0 ; m < errors.length; m ++){
-    divs[m].style = 'color:red; font-weight: bold';
+    errors[m].style = 'color:red; font-weight: bold';
 }

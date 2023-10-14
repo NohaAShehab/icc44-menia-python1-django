@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 
 # Create your models here.
 
@@ -13,3 +14,24 @@ class Track(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+    @classmethod
+    def get_all_objects(cls):
+        return cls.objects.all()
+
+    @classmethod
+    def get_index_url(cls):
+        return reverse('tracks.index')
+
+
+    @classmethod
+    def get_specific_object(cls, id):
+        return cls.objects.get(id=id)
+
+
+    def get_image_url(self):
+        return  f'/media/{self.image}'
+
+
+    def get_edit_url(self):
+        return  reverse('tracks.edit', args=[self.id])

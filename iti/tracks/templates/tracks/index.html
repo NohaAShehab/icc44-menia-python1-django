@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>TracKs</title>
-</head>
-<body>
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %} Create New Student {% endblock %}
 
-<h1 style="color: blue; text-align: center; font-style: italic">
-    Welcome to tracks home page
-</h1>
+{% block content %}
+    <a href="{% url 'tracks.create' %}" class="btn btn-dark"> Create New Track </a>
+<div class="row">
 
-</body>
-</html>
+    {% for track in tracks %}
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+  <img src="{{track.get_image_url}}" class="card-img-top"
+       width="200" height="200"
+       alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{track.name}}</h5>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="{{track.get_edit_url}}" class="btn btn-warning">Edit</a>
+  </div>
+</div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

@@ -9,11 +9,12 @@ class StudentForm(forms.Form):
     email = forms.EmailField()
     grade = forms.IntegerField(required=True)
     image = forms.ImageField()
-    gender = forms.ChoiceField(
-        choices=[('m', 'Male'), ('f', 'Female')])
-    track  =  forms.ModelChoiceField(
+    track = forms.ModelChoiceField(
         Track.objects.all(), label='Track'
     )
+    gender = forms.ChoiceField(
+        choices=[('m', 'Male'), ('f', 'Female')])
+
 
     # define your own validation rules
     # email unique
