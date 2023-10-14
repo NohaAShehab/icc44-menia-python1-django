@@ -6,7 +6,6 @@
     <a href="{% url 'tracks.create' %}" class="btn btn-dark"> Create New Track </a>
 <div class="row">
 
-    {% for track in tracks %}
     <div class="col-4">
         <div class="card" style="width: 18rem;">
   <img src="{{track.get_image_url}}" class="card-img-top"
@@ -14,11 +13,10 @@
        alt="...">
   <div class="card-body">
     <h5 class="card-title">{{track.name}}</h5>
-    <a href="{{track.get_show_url}}" class="btn btn-primary">Show</a>
-      <a href="{{track.get_edit_url}}" class="btn btn-warning">Edit</a>
+      <h6 class="card-body"> {{track.description}} </h6>
+    <a href="{{track.get_index_url}}" class="btn btn-primary">Back to all tracks </a>
   </div>
 </div>
         </div>
-    {% endfor %}
     </div>
 {% endblock %}

@@ -29,9 +29,13 @@ class Track(models.Model):
         return cls.objects.get(id=id)
 
 
+
     def get_image_url(self):
         return  f'/media/{self.image}'
 
 
     def get_edit_url(self):
         return  reverse('tracks.edit', args=[self.id])
+
+    def get_show_url(self):
+        return  reverse('tracks.show', args=[self.id])
