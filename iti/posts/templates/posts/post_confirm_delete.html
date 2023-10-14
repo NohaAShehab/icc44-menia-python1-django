@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %} Create New Post {% endblock %}
+
+{% block content %}
+<h1> Edit Post </h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p class="form-label"> Are you want to delete this Post ?</p>
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+<a class="btn btn-dark"  href="{{post.get_show_url}}">  Cancel</a>
+<script src="{% static 'students/js/script.js'%}">
+
+</script>
+{% endblock %}

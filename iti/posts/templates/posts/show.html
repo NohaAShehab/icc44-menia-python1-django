@@ -1,0 +1,26 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %} All posts {% endblock %}
+
+{% block content %}
+<h1> Post Detail</h1>
+    <a href="{% url 'posts.create' %}" class="btn btn-dark"> Create New Post </a>
+<div class="row">
+
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+  <img src="{{post.get_image_url}}" class="card-img-top"
+       width="200" height="200"
+       alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+      <h5 class="card-body"> Body: {{post.body}}</h5>
+      <h5 class="card-body"> Created at: {{post.created_at}}</h5>
+      <h5 class="card-body"> Updated at: {{post.updated_at}}</h5>
+    <a href="{{post.get_index_url}}" class="btn btn-primary">Back to all posts </a>
+
+  </div>
+</div>
+        </div>
+    </div>
+{% endblock %}

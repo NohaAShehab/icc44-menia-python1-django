@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'tracks.apps.TracksConfig',
     'students.apps.StudentsConfig',
     'django_cleanup.apps.CleanupConfig',
+    'posts.apps.PostsConfig'
 
 ]
 

@@ -21,15 +21,10 @@ from django.conf import settings
 from students.views import helloworld, sayHi, sayHifriend, students_index, students_profile
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('hello', helloworld, name='helloworld'),
-    # path('hi', sayHi, name='hi'),
-    # path('hi/<friendname>', sayHifriend,name='hifriend'),
-    # path('students', students_index, name='students_index'),
-    # path('students/profile/<int:id>',students_profile, name='student.profile' ),
-
     # include urls files located students application ?
     path('students/', include('students.urls')),
     path('tracks/', include('tracks.urls')),
+    path('posts/', include('posts.urls'))
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

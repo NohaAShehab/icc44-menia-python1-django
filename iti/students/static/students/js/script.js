@@ -30,6 +30,10 @@ for (var d =0; d < checkboxex.length; d++){
     checkboxex[d].classList.remove('form-control')
 }
 
+textareas=document.getElementsByTagName("textarea")
+for (var d =0; d < textareas.length; d++){
+    textareas[d].classList.add('form-control')
+}
 // document.querySelector("form").addEventListener("submit", function () {
 //
 // });
