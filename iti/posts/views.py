@@ -12,6 +12,20 @@ class PostCreateView(CreateView):
     form_class =  PostModelForm
     success_url =reverse_lazy('posts.index')
 
+    def form_valid(self, form):
+        request = self.request
+        user = request.user
+        form.instance.author =user
+        return  super().form_valid(form)
+
+
+
+
+    # def form_valid(self, form):
+    #     request = self.request
+    #     form.instance.author = request.user
+    #     return super().form_valid(form)
+
 
 class PostListView(ListView):
     model = Post
