@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse
+from django.contrib.auth.decorators import  login_required
 from django.http import HttpResponse
 from students.models import Student
 from students.forms import  StudentForm
@@ -104,8 +105,9 @@ def create(request):
     return render(request, 'students/crud/create.html')
 
 
-
+@login_required()
 def createViaForm(request):
+    print(request.user)
     form = StudentForm()
     if request.method == 'POST':
         print('hiiiii')
